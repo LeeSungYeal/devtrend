@@ -1,0 +1,121 @@
+.intro {
+    position: relative;
+    overflow: hidden;
+    /* background-color handled by section-dark in jsx or global */
+}
+
+/* Optional background effect */
+.intro::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 50%;
+    height: 50%;
+    background: radial-gradient(circle at bottom right, rgba(34, 211, 238, 0.05), transparent 70%);
+    pointer-events: none;
+}
+
+.intro-content {
+    text-align: center;
+    position: relative;
+    z-index: 1;
+}
+
+.section-title {
+    font-size: var(--text-3xl);
+    font-weight: 800;
+    margin-bottom: var(--space-6);
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.02em;
+}
+
+.section-description {
+    font-size: var(--text-lg);
+    color: var(--color-gray-300);
+    margin-bottom: var(--space-16);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+}
+
+.section-description strong {
+    color: var(--color-neon-purple);
+    font-weight: 700;
+}
+
+.intro-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+}
+
+.intro-card {
+    padding: var(--space-8);
+    border-radius: var(--radius-xl);
+    transition: all var(--transition-base);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    position: relative;
+    overflow: hidden;
+}
+
+.intro-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(99, 102, 241, 0.3);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.5);
+}
+
+.card-icon {
+    font-size: var(--text-5xl);
+    margin-bottom: var(--space-6);
+    display: inline-block;
+    transition: transform var(--transition-bounce);
+}
+
+.intro-card:hover .card-icon {
+    transform: scale(1.2);
+}
+
+.card-title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    color: var(--color-gray-50);
+    margin-bottom: var(--space-3);
+}
+
+.card-description {
+    font-size: var(--text-base);
+    color: var(--color-gray-400);
+    line-height: 1.7;
+}
+
+.highlight-text {
+    color: var(--color-neon-cyan);
+    font-weight: 700;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .section-title {
+        font-size: var(--text-4xl);
+    }
+
+    .intro-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Desktop */
+@media (min-width: 1024px) {
+    .section-title {
+        font-size: var(--text-5xl);
+    }
+}

@@ -1,0 +1,120 @@
+.solution {
+    background-color: var(--color-bg-primary);
+}
+
+.solution-content {
+    text-align: center;
+}
+
+.solution-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+    margin-top: var(--space-12);
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.solution-card {
+    padding: var(--space-12);
+    border-radius: var(--radius-2xl);
+    position: relative;
+    overflow: hidden;
+    transition: all var(--transition-slow);
+    border: 2px solid rgba(102, 126, 234, 0.2);
+    text-align: left;
+}
+
+.solution-card::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: var(--gradient-primary);
+    transform: scaleX(0);
+    transition: transform var(--transition-slow);
+}
+
+.solution-card:hover::before {
+    transform: scaleX(1);
+}
+
+.solution-card:hover {
+    transform: translateY(-10px) rotateX(2deg);
+    padding: var(--space-12) var(--space-8);
+    text-align: left;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.card-number {
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 8rem;
+    font-weight: 900;
+    color: rgba(255, 255, 255, 0.03);
+    font-family: var(--font-secondary);
+    line-height: 1;
+    pointer-events: none;
+    transition: all var(--transition-base);
+}
+
+.solution-card:hover .card-number {
+    transform: translateY(-10px) scale(1.1);
+    color: rgba(255, 255, 255, 0.05);
+}
+
+.solution-card-title {
+    font-size: var(--text-2xl);
+    margin-bottom: var(--space-6);
+    position: relative;
+    z-index: 1;
+}
+
+.solution-card-description {
+    font-size: var(--text-lg);
+    color: var(--color-gray-300);
+    line-height: 1.7;
+    margin-bottom: var(--space-8);
+    position: relative;
+    z-index: 1;
+    flex-grow: 1;
+}
+
+.highlight-gradient {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 700;
+}
+
+.card-badge {
+    display: inline-block;
+    padding: var(--space-2) var(--space-4);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: var(--radius-full);
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: #fff;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: fit-content;
+}
+
+/* Tablet */
+@media (min-width: 768px) {
+    .solution-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .solution-card-title {
+        font-size: var(--text-3xl);
+    }
+}

@@ -1,0 +1,82 @@
+.cursor-dot,
+.cursor-follower {
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate3d(-100px, -100px, 0);
+    /* Start off-screen */
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background-color: var(--color-neon-cyan);
+    margin-left: -4px;
+    /* Center offset */
+    margin-top: -4px;
+    box-shadow: 0 0 10px var(--color-neon-cyan);
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    margin-left: -20px;
+    /* Center offset */
+    margin-top: -20px;
+    transition: width 0.3s, height 0.3s, background-color 0.3s, border-color 0.3s;
+}
+
+/* Hover State */
+.cursor-dot.hovered {
+    opacity: 0;
+    /* Hide inner dot on hover maybe? Or make it smaller? */
+}
+
+.cursor-follower.hovered {
+    width: 60px;
+    height: 60px;
+    margin-left: -30px;
+    margin-top: -30px;
+    background-color: rgba(34, 211, 238, 0.1);
+    border-color: var(--color-neon-cyan);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.2);
+    backdrop-filter: blur(2px);
+}
+
+/* Hide default cursor globally */
+body {
+    cursor: none;
+}
+
+a,
+button,
+.logo,
+input,
+textarea {
+    cursor: none;
+    /* Ensure pointer doesn't show up */
+}
+
+@media (max-width: 768px) {
+
+    .cursor-dot,
+    .cursor-follower {
+        display: none;
+    }
+
+    body {
+        cursor: auto;
+    }
+
+    a,
+    button,
+    .logo,
+    input,
+    textarea {
+        cursor: pointer;
+    }
+}
