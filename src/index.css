@@ -514,6 +514,14 @@ a {
   gap: var(--space-6);
 }
 
-.gap-8 {
-  gap: var(--space-8);
+
+/* Hide Unicorn Studio Watermark */
+a[href*="unicorn.studio"],
+a[href*="unicom.studio"],
+[data-us-watermark],
+.us-watermark {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
 }
