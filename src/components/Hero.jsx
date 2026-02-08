@@ -43,7 +43,7 @@ function Hero() {
                             onClick={() => document.getElementById('closing').scrollIntoView({ behavior: 'smooth' })}
                             className="btn btn-primary btn-large"
                         >
-                            지금 바로 무료 진단 받기
+                            지금 무료 진단받기
                         </MagneticBtn>
                         <MagneticBtn
                             onClick={() => document.getElementById('process').scrollIntoView({ behavior: 'smooth' })}

@@ -62,8 +62,27 @@
     margin-left: 4px;
     align-self: flex-start;
     margin-top: 6px;
+    width: 12px;
+    /* Default small size */
+    height: 12px;
     filter: drop-shadow(0 0 5px #22d3ee);
     animation: float 3s ease-in-out infinite;
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+    .logo {
+        font-size: 1.5rem;
+        /* Similar to 'devTrend' visual weight */
+    }
+
+    .logo-arrow {
+        width: 10px;
+        height: 10px;
+        margin-top: 5px;
+        stroke-width: 3px;
+        /* Slightly thinner stroke for smaller size */
+    }
 }
 
 .nav {

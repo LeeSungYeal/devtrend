@@ -226,6 +226,12 @@
         font-size: 0.7rem;
         letter-spacing: -0.02em;
     }
+
+    /* Defensively hide icons in CTA on mobile as requested */
+    .hero-cta svg,
+    .hero-cta img {
+        display: none !important;
+    }
 }
 
 /* Tablet */
