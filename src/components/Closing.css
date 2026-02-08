@@ -231,6 +231,43 @@
     }
 }
 
+/* Mobile - Form Optimization */
+@media (max-width: 767px) {
+    .contact-form-wrapper {
+        animation: none;
+        /* Disable float animation for stability */
+        transform: none !important;
+        padding: var(--space-6);
+        margin-top: var(--space-8);
+        border: 1px solid rgba(168, 85, 247, 0.2);
+        /* Subtle purple border */
+        box-shadow: 0 0 20px rgba(168, 85, 247, 0.1);
+    }
+
+    /* Move the top gradient line inside specifically for mobile if needed, or keep as is */
+
+    .form-group label {
+        font-size: 0.9rem;
+        margin-bottom: var(--space-1);
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 16px;
+        /* Prevent iOS zoom */
+        padding: var(--space-3) var(--space-4);
+        background: rgba(0, 0, 0, 0.4);
+        /* Darker background for contrast */
+    }
+
+    .submit-btn {
+        padding: var(--space-4);
+        font-size: 1.1rem;
+        font-weight: 700;
+        box-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+    }
+}
+
 /* Trend Text Highlight Animation */
 .highlight {
     background: linear-gradient(to right,

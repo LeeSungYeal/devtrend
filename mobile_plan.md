@@ -24,3 +24,12 @@
   - Icons explicitly hidden on mobile.
 - **Header**:
   - Balanced Logo and Arrow size on mobile (`1.5rem` / `10px`).
+  - **CTA Button**: Reduced font size and padding.
+  - **CTA Button**: Reduced vertical padding to `4px`.
+- **Footer**:
+  - Reorganized link layout (Service/Company side-by-side top row).
+  - Centered Contact info block.
+  - **Refined Typography**: Increased font sizes and spacing for better readability.
+- **Contact Form**:
+  - Layout stabilized (float disabled).
+  - High contrast for mobile readability.

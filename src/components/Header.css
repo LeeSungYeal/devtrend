@@ -83,6 +83,16 @@
         stroke-width: 3px;
         /* Slightly thinner stroke for smaller size */
     }
+
+    .btn-cta {
+        font-size: 0.75rem;
+        /* Smaller text */
+        /* Smaller text */
+        /* Smaller text */
+        padding: 4px var(--space-4);
+        /* Minimal vertical padding */
+        height: auto;
+    }
 }
 
 .nav {
