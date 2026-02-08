@@ -63,7 +63,22 @@
     font-family: var(--font-secondary);
     line-height: 1;
     pointer-events: none;
+    pointer-events: none;
     transition: all var(--transition-base);
+}
+
+/* Mobile - Decorative Number */
+@media (max-width: 767px) {
+    .card-number {
+        font-size: 4rem;
+        top: -10px;
+        right: -10px;
+        opacity: 0.5;
+    }
+
+    .solution-card-title {
+        font-size: var(--text-xl);
+    }
 }
 
 .solution-card:hover .card-number {

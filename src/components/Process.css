@@ -44,9 +44,23 @@
     }
 }
 
+/* Mobile - Vertical Connector */
 @media (max-width: 767px) {
     .timeline-line {
-        display: none;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: 0;
+        bottom: 0;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        z-index: 0;
+        transform: translateX(-50%);
+    }
+
+    .process-timeline {
+        padding-top: var(--space-8);
+        padding-bottom: var(--space-8);
     }
 }
 
