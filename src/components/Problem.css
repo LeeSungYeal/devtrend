@@ -104,6 +104,45 @@
     }
 }
 
+/* Mobile - 2x2 Dense Grid */
+@media (max-width: 767px) {
+    .problem-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--space-3);
+    }
+
+    .problem-item {
+        padding: var(--space-4);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 100%;
+        min-height: 180px;
+    }
+
+    .problem-icon-wrapper {
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-lg);
+        margin-bottom: var(--space-3);
+    }
+
+    .problem-title {
+        font-size: var(--text-sm);
+        margin-bottom: var(--space-2);
+        line-height: 1.3;
+    }
+
+    .problem-description {
+        font-size: var(--text-xs);
+        line-height: 1.5;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+}
+
 /* Desktop */
 @media (min-width: 1024px) {
     .problem-grid {

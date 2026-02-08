@@ -197,9 +197,34 @@
     }
 
     .hero-stats {
-        padding: var(--space-6);
-        gap: var(--space-6);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: var(--space-4);
+        gap: 0;
+        /* Remove gap to fit dividers */
         background: rgba(255, 255, 255, 0.05);
+        align-items: center;
+    }
+
+    .stat-item:not(:last-child)::after {
+        display: block;
+        right: 0;
+        top: 25%;
+        height: 50%;
+        width: 1px;
+        background: rgba(255, 255, 255, 0.1);
+        position: absolute;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+        /* Compact size */
+        margin-bottom: var(--space-1);
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+        letter-spacing: -0.02em;
     }
 }
 

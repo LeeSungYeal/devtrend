@@ -44,23 +44,69 @@
     }
 }
 
-/* Mobile - Vertical Connector */
+/* Mobile - Numbered Card Style */
 @media (max-width: 767px) {
     .timeline-line {
-        display: block;
-        position: absolute;
-        left: 50%;
-        top: 0;
-        bottom: 0;
-        width: 1px;
-        background: rgba(255, 255, 255, 0.1);
-        z-index: 0;
-        transform: translateX(-50%);
+        display: none;
+        /* Hide line for card style */
     }
 
     .process-timeline {
-        padding-top: var(--space-8);
-        padding-bottom: var(--space-8);
+        padding-top: 0;
+        padding-bottom: 0;
+        display: flex;
+        flex-direction: column;
+        gap: var(--space-6);
+    }
+
+    .process-step {
+        flex-direction: row;
+        align-items: flex-start;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: var(--radius-xl);
+        padding: var(--space-4);
+        margin-bottom: 0;
+        text-align: left;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: var(--text-lg);
+        margin-right: var(--space-4);
+        border-width: 1px;
+        background: var(--gradient-primary);
+        /* Filled circle for emphasis */
+        box-shadow: 0 0 10px rgba(168, 85, 247, 0.5);
+    }
+
+    .step-number::after {
+        display: none;
+        /* Remove spinner on mobile */
+    }
+
+    .step-content {
+        background: transparent;
+        border: none;
+        padding: 0;
+        flex: 1;
+    }
+
+    .step-title {
+        font-size: var(--text-lg);
+        margin-top: var(--space-1);
+    }
+
+    .step-description {
+        font-size: var(--text-sm);
+        line-height: 1.5;
+        margin-bottom: var(--space-3);
+    }
+
+    .tag {
+        font-size: 11px;
+        padding: 2px 8px;
     }
 }
 

@@ -124,35 +124,90 @@
     font-weight: 500;
 }
 
-/* Mobile Layout */
+/* Mobile - Comparison Cards */
 @media (max-width: 767px) {
     .comparison-header {
-        grid-template-columns: 1fr;
-    }
-
-    .header-cell:first-child {
         display: none;
-    }
-
-    .header-cell.competitor,
-    .header-cell.devtrend {
-        margin-bottom: var(--space-4);
+        /* Hide global header */
     }
 
     .comparison-row {
-        grid-template-columns: 1fr;
-        gap: var(--space-2);
-        margin-bottom: var(--space-8);
-        background: rgba(255, 255, 255, 0.02);
-        padding: var(--space-4);
+        display: block;
+        /* Remove grid */
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.05);
         border-radius: var(--radius-xl);
+        padding: var(--space-4);
+        margin-bottom: var(--space-6);
+        position: relative;
+        overflow: hidden;
     }
 
     .row-label {
-        background: transparent;
-        border: none;
-        padding-bottom: var(--space-2);
         font-size: var(--text-lg);
-        color: var(--color-neon-cyan);
+        color: white;
+        text-align: left;
+        padding: 0 0 var(--space-4) 0;
+        background: none;
+        border: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        margin-bottom: var(--space-4);
+        display: block;
+        width: 100%;
+    }
+
+    /* Split Container for Comparison */
+    .row-split-container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-4);
+    }
+
+    /* Use pseudo-elements or JS to wrap, but CSS grid handles direct children well if structure allows.
+       However, the HTML structure is flat: label, cell, cell.
+       We'll simulate the grid on the parent for the cells.
+    */
+    .comparison-row {
+        display: grid;
+        grid-template-areas:
+            "label label"
+            "competitor devtrend";
+        grid-template-columns: 1fr 1fr;
+        gap: var(--space-3);
+    }
+
+    .row-label {
+        grid-area: label;
+        margin-bottom: var(--space-2);
+        padding-bottom: var(--space-2);
+        text-align: center;
+        background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.05), transparent);
+        border-radius: var(--radius-md);
+    }
+
+    .row-cell {
+        padding: var(--space-3);
+        min-height: 140px;
+        justify-content: flex-start;
+    }
+
+    .row-cell.competitor {
+        grid-area: competitor;
+        background: rgba(255, 50, 50, 0.05);
+        border: 1px solid rgba(255, 50, 50, 0.1);
+    }
+
+    .row-cell.devtrend {
+        grid-area: devtrend;
+        background: rgba(34, 211, 238, 0.05);
+        border: 1px solid rgba(34, 211, 238, 0.2);
+    }
+
+    .row-cell .icon {
+        font-size: 1.5rem;
+    }
+
+    .row-cell p {
+        font-size: 0.8rem;
     }
 }
